@@ -21,7 +21,7 @@ public class Test_demo {
   }
   @BeforeMethod
   public void beforeMethod() {
-	  System.out.println("Begins the method");
+	  System.out.println("Begins the method.....");
   }
 
   @AfterMethod
