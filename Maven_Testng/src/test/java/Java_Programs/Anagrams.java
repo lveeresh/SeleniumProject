@@ -15,7 +15,7 @@ public class Anagrams {
         Arrays.sort(c1);
         Arrays.sort(c2);
        if( Arrays.equals(c1,c2))
-       System.out.println("true");
+       System.out.println("true and its Anagram");
 
 	}
 
