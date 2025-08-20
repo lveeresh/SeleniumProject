@@ -22,9 +22,13 @@ public class SeleniumNotes {
 	 		
 	 
 	 
-	 3.
+	 3.is it possible t automate everything or 100% automation possible?
+	 Ans: 100% qutomation is not possible. we can automate repetitive and stable tasks, but things like frequent UI changes, usability 
+	 		testing, OTP or captcha's needs human effort. thats why mix of automation and human testing is always required.
 	 
-	 
+	 4. How does Parallel execution helps you?
+	 Ans: Parallel Execution helps to save the time by running multiple testsat the same time, which improves efficiency and gives
+	 		faster feedback.
 	 */
 	
 	

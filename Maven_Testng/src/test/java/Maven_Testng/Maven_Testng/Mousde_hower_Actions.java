@@ -93,6 +93,5 @@ public class Mousde_hower_Actions {
 		act.sendKeys(Keys.ARROW_RIGHT).perform();
 	 
 	 
-	 
   }
 }
