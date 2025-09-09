@@ -3,12 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Maven_Testng.Maven_Testng.MyTestToExecuteFailedTestCases">
+      <class name="Maven_Testng.Maven_Testng.ShadowDomExample">
         <methods>
-          <include name="test1"/>
-          <include name="test2"/>
+          <include name="shadowRoot"/>
         </methods>
-      </class> <!-- Maven_Testng.Maven_Testng.MyTestToExecuteFailedTestCases -->
+      </class> <!-- Maven_Testng.Maven_Testng.ShadowDomExample -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

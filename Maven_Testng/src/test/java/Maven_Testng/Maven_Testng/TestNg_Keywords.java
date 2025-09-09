@@ -36,7 +36,7 @@ public class TestNg_Keywords {
 	 Assert.assertEquals(true,b);   //Assert.assertTrue(b);
   }
   
-  //it will execute 2 times
+  //it will execute 3 times
   @Test(invocationCount=3, threadPoolSize=2)
   public void do_operation() {
   	  System.out.println("after login");

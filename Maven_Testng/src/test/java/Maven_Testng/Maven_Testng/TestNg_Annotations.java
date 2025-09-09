@@ -42,12 +42,12 @@ public class TestNg_Annotations {
 		System.out.println("Logintoiapp_test2");
 	}
 
-	@Test(priority = 3,dependsOnMethods="logintoapp", groups = "search_app") // it will group the methods with same group names and give the results
+	@Test(priority = 3,dependsOnMethods="logintoapp", groups = {"search_app"}) // it will group the methods with same group names and give the results
 	public void serach_app() {
 		System.out.println("Searchapp_test3");
 	}
 
-	@Test(priority = 4, groups = "search_app")
+	@Test(priority = 4, groups = {"search_app"})
 	public void actionson_app() {
 		System.out.println("Actionsonapp_test4");
 	}
@@ -71,5 +71,8 @@ public class TestNg_Annotations {
 	public void afterTest() {
 		System.out.println("after test");
 	}
-
+	@AfterSuite
+	public void afterSuite() {
+		System.out.println("after suite");
+	}
 }

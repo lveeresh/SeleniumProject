@@ -43,6 +43,20 @@ public class DropDowns_And_Frame_Works_Handling {
 		Dimension no_frames = driver.findElement(By.tagName("iframe")).getSize();
 		System.out.println("no of frameworks :"+no_frames);
 		driver.switchTo().frame("aswift_0");
+		
+		/*
+		 * we can find a frame in different ways
+		 1. By Index:
+		 	driver.switchTo().frame(0); // Switches to the first frame on the page
+		 	
+		 2. By WebElement:
+		 	WebElement frameElement = driver.findElement(By.xpath("//iframe[@title='myFrame']"));
+			driver.switchTo().frame(frameElement);
+			
+		 3. By Name or ID
+		 	driver.switchTo().frame("frameNameOrId");
+
+		 */
 		System.out.println("Swithced to first frame");
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
@@ -61,7 +75,8 @@ public class DropDowns_And_Frame_Works_Handling {
 		
 		/*
 		 * How to select value from Dropdown without using Select class, Be
-		 *  driver.findElement(By.name("JDK")).click();
+		 *  
+		driver.findElement(By.name("JDK")).click();
         List<WebElement> allOptions = driver.findElements(By.xpath("//select[@name='JDK']//option"));
         System.out.println(allOptions.size());                                           
         for(int i = 0; i<=allOptions.size()-1; i++) {
@@ -74,12 +89,19 @@ public class DropDowns_And_Frame_Works_Handling {
 		
 		/*		How would u handle a multiple select dropdown?
 		
-		Ans: isMultiple() is used to check if multiple selections(means multiple dropdown checkboxes) are allowed, then select multiple options using 
-			selectVisibleText() or selectByIndex().
+		Ans: isMultiple() is used to check if multiple selections(means multiple dropdown checkboxes) are allowed,
+		 	 then select multiple options using 
+			 selectByVisibleText() or selectByIndex().
 			
 			if(sel.isMultiple()){
 			sel.selectByVisibleText("1998");
 			}
+			
+			
+			
+ 			->Deselect one option
+            sel.deselectByVisibleText("Apple");
+
 		*/
 		}
 }

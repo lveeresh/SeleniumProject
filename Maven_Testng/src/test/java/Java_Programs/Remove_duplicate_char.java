@@ -24,38 +24,38 @@ class Main {
 
 //==========================================================
    //without using collections
+/*
+public class RemoveDuplicates {
+	public static void main(String[] args) {
+		String s1 = "veereshlakkandii";
+		char a[] = s1.toCharArray();
+		String s2 = "";
 
-//public class RemoveDuplicates {
-//	public static void main(String[] args) {
-//		String s1 = "veereshlakkandii";
-//		char a[] = s1.toCharArray();
-//		String s2 = "";
-//
-//		int n = a.length;
-//
-//		for (int i = 0; i < n; i++) {
-//			for (int j = i + 1; j < n;) {
-//				if (a[i] == a[j]) {
-//					// Shift elements to the left
-//					for (int k = j; k < n - 1; k++) {
-//						a[k] = a[k + 1];
-//					}
-//					n--;  // Reduce array size
-//				} else {
-//					j++;
-//				}
-//			}
-//		}
-//
-//		// Print the array after removing duplicates
-//		System.out.println("Array after removing duplicates:");
-//		for (int i = 0; i < n; i++) {
-//			s2 = s2 + a[i];
-//		}
-//		System.out.println(s2);
-//	}
-//}
+		int n = a.length;
 
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n;) {
+				if (a[i] == a[j]) {
+					// Shift elements to the left
+					for (int k = j; k < n - 1; k++) {
+						a[k] = a[k + 1];
+					}
+					n--;  // Reduce array size
+				} else {
+					j++;
+				}
+			}
+		}
+
+		// Print the array after removing duplicates
+		System.out.println("Array after removing duplicates:");
+		for (int i = 0; i < n; i++) {
+			s2 = s2 + a[i];
+		}
+		System.out.println(s2);
+	}
+}
+*/
 //=========================================================
 
 //import java.util.*;

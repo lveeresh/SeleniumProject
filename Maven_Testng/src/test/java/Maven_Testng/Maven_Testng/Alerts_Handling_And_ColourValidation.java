@@ -10,20 +10,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.Color;
 import org.testng.annotations.Test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
 
 public class Alerts_Handling_And_ColourValidation {
 	WebDriver driver;
   @Test
   public void setUp() throws InterruptedException {
-	  System.setProperty("webdriver.chrome.driver",
-				"C:\\selenium_testing_10_aug\\Maven_Testng\\servers\\chromedriver.exe");
+//	  System.setProperty("webdriver.chrome.driver",
+//				"C:\\selenium_testing_10_aug\\Maven_Testng\\servers\\chromedriver.exe");
+	  WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		
-		
+		String sveeresh = "Veeresh";
 		/* To verify whether the page contains 404 error code during page launch
 		 
 		String p=driver.getPageSource();
@@ -32,18 +34,28 @@ public class Alerts_Handling_And_ColourValidation {
 		or 		
 		Assert.assertTrue(driver.getPageSource().contains("404"));   */
 		
-		
+		//Color validation: 1st type
 		Thread.sleep(10000);
-		String actualColour = "#2ba6cb";
+		String expectedColour = "#2ba6cb"; // Expected color in Hex
+		
+		//to get this '#2ba6cb' --. Inspect the element and after right side there is a style, selectorhub,etc sections 
+		//u will find this in the style section like -->    background-color: : #2ba6cb;
+		
+		
 		String rgbaValue = driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).getCssValue("background-color");
 		System.out.println("rgba value :"+rgbaValue);
-		String expectedColour = Color.fromString(rgbaValue).asHex();
+		String actualColour = Color.fromString(rgbaValue).asHex(); // Convert RGBA to Hex
 		System.out.println("cloure "+expectedColour);
 		Assert.assertEquals(actualColour, expectedColour);
 		
 		alertsHandling();
   }
   public void alertsHandling() throws InterruptedException {
+	  
+	  //Color validation: 2nd type --> refer above for 1st type
+	  String actualColour1 = "rgba(43, 166, 203, 1)";
+		String rgbaValue1 = driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).getCssValue("background-color");
+		Assert.assertEquals(actualColour1, rgbaValue1);
 	  
 	  //Alert window with ok button
 	  driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();

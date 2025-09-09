@@ -24,8 +24,6 @@ public class MaptoList {
 		System.out.println("value and keys from map only :"+mp.entrySet());
 		
 		
-		
-
 	}
 
 }

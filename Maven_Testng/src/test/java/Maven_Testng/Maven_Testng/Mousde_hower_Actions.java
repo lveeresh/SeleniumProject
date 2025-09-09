@@ -37,7 +37,7 @@ public class Mousde_hower_Actions {
 //	  
 //	  WebElement drop_img = driver.findElement(By.xpath("//div[@id='div1']"));
 //	  Actions act = new Actions(driver);
-//	 // act.dragAndDrop(drag_img, drop_img).perform();
+//	  act.dragAndDrop(drag_img, drop_img).perform();
 //	  Thread.sleep(5000);
 //	  driver.quit();
 //  }
@@ -49,7 +49,7 @@ public class Mousde_hower_Actions {
 //	    Actions act = new Actions(driver);
 //	    
 //	    Thread.sleep(5000);
-//	  act.moveToElement(products).moveToElement(product_drpdown).click().perform();
+//	  act.moveToElement(products).moveToElement(product_drpdown).click().perform();--> it will also work
 //	  
 //  }
   
@@ -68,7 +68,7 @@ public class Mousde_hower_Actions {
 	 el.sendKeys(Keys.SHIFT,"veereshh");
 	 el.click();
 	// or
-	// act.keyDown(Keys.SHIFT).sendKeys("veereshh").keyUp(Keys.SHIFT).build().perform();
+	// act.keyDown(Keys.SHIFT).sendKeys("veereshh").keyUp(Keys.SHIFT).perform();
 	 
 	 
 	 Thread.sleep(5000);
@@ -76,22 +76,47 @@ public class Mousde_hower_Actions {
 	 act.sendKeys(Keys.BACK_SPACE).perform();
 	 Thread.sleep(2000);
 	 
-		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).build().perform();
-		act.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).build().perform();
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+		act.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.BACK_SPACE).perform();
 		Thread.sleep(2000);
-		act.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+		act.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
 		highlight_element(el,driver);
 		
 		//perform Ctrl+Alt+Delete simoultaniously
-		act.keyDown(Keys.CONTROL).keyDown(Keys.ALT).sendKeys(Keys.DELETE).keyUp(Keys.DELETE).keyUp(Keys.ALT).keyUp(Keys.CONTROL).perform();
+		act.keyDown(Keys.CONTROL).keyDown(Keys.ALT).sendKeys(Keys.DELETE).keyUp(Keys.ALT)
+				.keyUp(Keys.CONTROL).perform();
 		
 		act.sendKeys(Keys.ARROW_DOWN).perform();
 		act.sendKeys(Keys.ARROW_UP).perform();
 		act.sendKeys(Keys.ARROW_LEFT).perform();
 		act.sendKeys(Keys.ARROW_RIGHT).perform();
-	 
+		
+		
+		//Dragging a horizantal slider:
+		WebElement slider = driver.findElement(By.id("slider"));
+		
+		act.dragAndDropBy(slider, 50, 0).perform(); //moving slider by 50 pixel to the right
+		
+		act.dragAndDropBy(slider, -30, 0).perform(); //moving slider by -30 pixel to the left
+		
+		//or Alernative
+		act.clickAndHold(slider).moveByOffset(70, 0).release().perform();  //moving right by 70 pixel
+		
+		act.clickAndHold(slider).moveByOffset(-50, 0).release().perform();   //moving left by -50 pixel
+		
+		
+		//Vertical slider:
+		
+		act.dragAndDropBy(slider, 0, 50).perform(); //moving slide down by  by 50 pixel
+		
+		act.dragAndDropBy(slider, 0, -30).perform(); //moving slider up by -30 pixel 
+		
+		//or Alernative
+		act.clickAndHold(slider).moveByOffset(0, 50).release().perform();  //moving slide down by  by 50 pixel
+		
+		act.clickAndHold(slider).moveByOffset(0, -30).release().perform();   //moving slide up by  by -30 pixel
 	 
   }
 }

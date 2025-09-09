@@ -15,17 +15,21 @@ public class DataFlow_splendidCRM extends Login{
 	@Test
 	public  void test() throws InterruptedException {
 		
-//		Login obj = new Login();
+//		LaunchBrowser obj = new LaunchBrowser();
+//		Login obj1 = new Login();
 //		obj.launchBrowser();
-//		obj.logIn("will","will");
-		
-		launchBrowser();
+//		obj1.logIn("will","will");
+//		
+		launchBrowser();		// Abstraction covered
 		logIn("will","will");
 
 //		Thread.sleep(60000);
-//		Thread.sleep(60000);
 //		driver.navigate().refresh();
 //		Thread.sleep(20000);
+		
+//		driver instance won't work here if u don't extend the login class, u r inheriting that from login class  -->Inheritance Covered here
+		
+		
 		
 		WebElement leads = driver.findElement(By.xpath("(//a[text()='Leads'])[1]"));
 		Actions act = new Actions(driver);
@@ -39,7 +43,11 @@ public class DataFlow_splendidCRM extends Login{
 
 		Thread.sleep(2000);
 		
-		selectTitle("Mr.");   //selecting title from dropdown
+		selectTitle("Mr.");   //selecting title from dropdown---> method overloading covered here
+		
+		//or
+		
+		selectTitle(1);		//select by index---> method overloading covered here
 		
 		driver.findElement(By.xpath("(//input[@value='  Save  '])[1]")).click();
 		Thread.sleep(3000);

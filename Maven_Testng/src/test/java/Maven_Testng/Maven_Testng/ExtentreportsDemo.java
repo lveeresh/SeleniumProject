@@ -13,8 +13,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentreportsDemo {
+import io.github.bonigarcia.wdm.WebDriverManager;
 
+public class ExtentreportsDemo  {
+
+	
 	public static void main(String[] args) throws InterruptedException {
 		
 		WebDriver driver=null;
@@ -22,22 +25,27 @@ public class ExtentreportsDemo {
 		ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReports.html");
 		ExtentReports extent = new ExtentReports(); 
 		extent.attachReporter(htmlReporter);
-		ExtentTest test1 = extent.createTest("Perform Drag And Drop Action","This is test to validate Alert Popup Functionality");
+		ExtentTest test1 = extent.createTest("Perform Drag And Drop Action","This is test to validate dragAndDrops Functionality");
 		
-		System.setProperty("webdriver.chrome.driver",
-					"C:\\selenium_testing_10_aug\\Maven_Testng\\servers\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver",
+//					"C:\\selenium_testing_10_aug\\Maven_Testng\\servers\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		driver= new ChromeDriver();
+		
 		test1.log(Status.INFO, "Starting Test Case");
 		
 		driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		Thread.sleep(5000);
-		test1.pass("Navigated to application home page");
+		
+		//test1.pass("Navigated to application home page");
+		ExtentLogger.logPass(test1, "Navigated", "sgould success", "succeced");
 		
 		JavascriptExecutor js =  (JavascriptExecutor) driver;
 		js.executeScript("document.body.style.zoom='200%'");
 		Thread.sleep(5000);
+		
 		test1.pass("set the  browser size as 200%");
 		
 		
@@ -120,3 +128,12 @@ public class ExtentreportsDemo {
 	}
 
 }
+
+ class ExtentLogger {
+
+    public static void logPass(ExtentTest test, String stepName, String expected, String actual) {
+        String message = String.format("Step: %s | Expected: %s | Actual: %s", stepName, expected, actual);
+        test.pass(message);
+    }
+}
+

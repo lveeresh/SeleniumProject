@@ -10,7 +10,7 @@ public class MyTestToExecuteFailedTestCases {
 	//refer testng1.xml file
 	
 	//@Test(retryAnalyzer=Annotations.RetryAnalyzer.class)	//Annotations-->Package
-	@Test()	//Annotations-->Package
+	@Test
 	public void test1() {
 
 		Assert.assertEquals(false, true);

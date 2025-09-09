@@ -199,32 +199,35 @@ public class FrequencyOfElementsInArray {
 
 //without using collections
 
-//class PrintDuplicteChars {
-//    public static void main(String[] args) {
-//        System.out.println("Try programiz.pro");
-//         String s="veer veer is is sup sup hi";
-//        // String a[]=s.split(" ");
-//        char c[]= s.toCharArray();
-//        
-//        int c1=0;
-//        for(int i=0;i<c.length;i++){
-//            c1=1;
-//            if(c[i]=='0' || c[i]==' '){
-//                continue;
-//            }
-//          
-//            for(int j=i+1;j<c.length;j++){
-//                if(c[i]==c[j]){
-//                    c1++;
-//                    c[j]='0';
-//                }
-//            }
-//             if(c1>1)
-//            System.out.println(c[i]+" - "+c1);
-//        else
-//        System.out.println(c[i]+" - "+c1);
-//        }
-//       
-//        
-//    }
-//}
+/*
+ 
+  class PrintDuplicteChars {
+  public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+         String s="veer veer is is sup sup hi";
+        // String a[]=s.split(" ");
+        char c[]= s.toCharArray();
+        
+        int c1=0;
+        for(int i=0;i<c.length;i++){
+            c1=1;
+            if(c[i]=='0' || c[i]==' '){
+                continue;
+            }
+          
+            for(int j=i+1;j<c.length;j++){
+                if(c[i]==c[j]){
+                    c1++;
+                    c[j]='0';
+                }
+            }
+             if(c1>1)
+            System.out.println(c[i]+" - "+c1);
+        else
+        System.out.println(c[i]+" - "+c1);
+        }
+       
+        
+    }
+}
+*/

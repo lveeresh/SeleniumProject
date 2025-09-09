@@ -22,7 +22,15 @@ public class DesiredCapabilities {
 	//driver.manage().window();
 	driver.get("https://cacert.com");
 	
+	
+	
 	}
 
 	
 }
+/*
+ 
+ 
+ 
+ 
+ */

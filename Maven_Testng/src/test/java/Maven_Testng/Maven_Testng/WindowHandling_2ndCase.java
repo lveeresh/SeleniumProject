@@ -58,7 +58,10 @@ public class WindowHandling_2ndCase {
 
 		// 2nd case using iterator method
 		
-/*		Iterator<String> itr = windows.iterator();
+/*		
+ 
+ 		Set<String> windows = driver.getWindowHandles();
+ 		Iterator<String> itr = windows.iterator();
 		String parentwnd = itr.next();
 		String childwnd = itr.next();
 		
@@ -71,7 +74,9 @@ public class WindowHandling_2ndCase {
 		}		*/
 		
 		// 3rd case
-/*		Iterator<String> itr = windows.iterator();
+/*	
+  	Set<String> windows = driver.getWindowHandles();
+  	Iterator<String> itr = windows.iterator();
 		
 		while(itr.hasNext()) {
 		String childwnd = itr.next();
@@ -86,6 +91,7 @@ public class WindowHandling_2ndCase {
 			driver.findElement(By.xpath("//a[text()='Sign in']")).click();
 		}
 		driver.switchTo().window(parentwindow);
-		}			*/
+		}	
+	*/
 	}
 }

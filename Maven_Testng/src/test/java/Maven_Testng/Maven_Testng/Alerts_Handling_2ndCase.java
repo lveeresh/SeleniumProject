@@ -40,6 +40,7 @@ public class Alerts_Handling_2ndCase {
   }
 private void alertsHandling_2nd() {
 	// TODO Auto-generated method stub
+	String sveeresh = "Veeresh";
 	
 }
 

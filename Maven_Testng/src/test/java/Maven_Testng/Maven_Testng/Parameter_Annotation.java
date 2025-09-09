@@ -15,7 +15,9 @@ import org.testng.annotations.Test;
 public class Parameter_Annotation {
 
 	WebDriver driver;
-
+	
+//				refer testng.xml file 
+	
 	@Test
 	@Parameters({ "browser", "url", "msg" })
 	public void parameter(String browser, String url, String msg) throws InterruptedException {

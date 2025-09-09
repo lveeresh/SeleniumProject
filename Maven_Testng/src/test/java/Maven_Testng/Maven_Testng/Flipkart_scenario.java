@@ -1,5 +1,6 @@
 package Maven_Testng.Maven_Testng;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -12,9 +13,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
+import com.mongodb.internal.connection.Time;
 
 import junit.framework.Assert;
 
@@ -46,9 +51,15 @@ public class Flipkart_scenario {
 		System.out.println("element found");
 		//elctronics.click();
 		ac.moveToElement(elctronics).perform();
-		Thread.sleep(10000);
+//		Thread.sleep(10000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='_16rZTH']//a[7]")));
+			//or
+//		WebElement el1= driver.findElement(By.xpath("//div[@class='_16rZTH']//a[7]"));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.visibilityOf(el1));
 		//ac.moveToElement(driver.findElement(By.xpath("//a[@class='_1BJVlg _11MZbx']"))).click();  //laptop accessries
-		driver.findElement(By.xpath("//div[@class='_16rZTH']//a[7]")).click();
+		
 		Thread.sleep(10000);
 		
 		

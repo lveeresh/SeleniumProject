@@ -21,7 +21,7 @@ public class BubbleSort {
 	           
 	    }
 	    if(flag==0)
-	    System.out.println("sorting not r4equired");
+	    System.out.println("sorting not required");
 	    for(int i=0;i<5;i++){
 	        System.out.println(a[i]);
 	    }
