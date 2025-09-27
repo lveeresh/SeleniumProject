@@ -48,6 +48,8 @@ public class Alerts_Handling_And_ColourValidation {
 		System.out.println("cloure "+expectedColour);
 		Assert.assertEquals(actualColour, expectedColour);
 		
+		WaitUtils.waitForElement(driver, By.id("name"), 20); // POM
+		
 		alertsHandling();
   }
   public void alertsHandling() throws InterruptedException {

@@ -230,4 +230,34 @@ public class FrequencyOfElementsInArray {
         
     }
 }
+
+----------------------------------------------
+using integer array
+
+class PrintDuplicteChars {
+  public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+       
+        int c[]={23,65,23,76,56,65};
+       
+        
+        int c1=0;
+        for(int i=0;i<c.length;i++){
+            c1=1;
+          
+            for(int j=i+1;j<c.length;j++){
+                if(c[i]==c[j]){
+                    c1++;
+                    c[j]='0';
+                }
+            }
+             if(c1>1)
+            System.out.println(c[i]+" - "+c1);
+        else
+        System.out.println(c[i]+" - "+c1);
+        }
+       
+        
+    }
+}
 */

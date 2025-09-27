@@ -2,10 +2,10 @@ package Maven_Testng.Maven_Testng;
 
 public class SeleniumNotes {
 	
-	/* 100-->57, 67, 73, 76
+	/* 100-->57, 65, 67, 73, 76
 	 
 ----------------------------------------------
-Hi, my name is Veeresh. I'm from Hyderabad and currently working as a Software Testing Engineer. I have a total 4.3 years of experience in the testing field, which includes 3.2 years in automation testing and 1 year in manual testing.
+Hi, my self Veeresh. I'm from Hyderabad and currently working as a Software Testing Engineer. I have a total 4.3 years of experience in the testing field, which includes 3.2 years in automation testing and 1 year in manual testing.
 
 I started my professional journey with Capgemini in June 2021, which is my first company. During my tenure, I have worked on applications in the e-commerce and automotive domains.
 
@@ -94,22 +94,24 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 		        WebDriver driver = new ChromeDriver();
 		        driver.get("https://example.com"); // 🔁 Replace with your target URL
 		
-		        // Step 1: Find all link elements
-		        List<WebElement> links = driver.findElements(By.tagName("a"));
-		
-		        // Step 2: Loop through first 10 links
-		        for (int i = 0; i < Math.min(10, links.size()); i++) {
-		            String url = links.get(i).getAttribute("href");
-		
-		            if (url != null && !url.isEmpty()) {
-		                driver.navigate().to(url); // Step 3: Navigate to link
-		                System.out.println("Title of " + url + " is: " + driver.getTitle()); // Step 4: Print title
-		                driver.navigate().back(); // Step 5: Return to original page
-		
-		                // Re-fetch links after navigating back (DOM may reload)
-		                links = driver.findElements(By.tagName("a"));
-		            }
-		        }
+					// Step 1: Find all link elements and collect URLs
+					List<WebElement> alllinks = driver.findElements(By.tagName("a"));
+					List<String> urls = new ArrayList<>();
+					
+					for (WebElement link : alllinks) {
+					    String url = link.getAttribute("href");
+					    if (url != null && !url.isEmpty()) {
+					        urls.add(url);
+					    }
+					}
+					
+					// Step 2: Use for-each loop to visit each URL and print the title
+					for (String url : urls) {
+					    driver.navigate().to(url);
+					    System.out.println("Title of " + url + " is: " + driver.getTitle());
+					    driver.navigate().back();
+					}
+
 		
 		        driver.quit();
 		    }
@@ -296,8 +298,9 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 		
 	17. How to scroll to- bottom of the page?
 	
-		Ans: JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript(windows.scrollTo(0,document.body.scrollHeight));
+		Ans: JavascriptExecutor js = (JavascriptExecutor) driver;
+			 js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
 	
 	18. Can we automate Captcha ? if Not what is the alternate way?
 		Ans: No we can't automate captcha becouse captcha's are intentionally introduced to block the automated test scripts.
@@ -330,11 +333,12 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 		
 		Sample Code:
 		List<String> names = Arrays.asList("veeresh", "satya", "abhishek");
+		 
+			names.stream()
+             .filter(name -> name.startsWith("s")) // lowercase 's'
+             .map(String::toUpperCase)
+             .forEach(System.out::println);
 
-		 names.stream()
-	     .filter(name -> name.startsWith("S"))
-	     .map(String : toUpperCase)
-	     .forEach(System.out::println);
 	    
 	 23. can we declare constructor static in java?
 	 	 Ans: No, 
@@ -452,9 +456,331 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		WebDriver driver = new ChromeDriver(options);
+-----------------------------------------------------------------------------------------------------------------------------------
+		
+1.	Default pooling time of implicit and explicit and fluent waits --> 500 milli sec or 0.5 sec
 
-		
-		
+2.	If both implicit and explicit wait is mentioned in the script which one will work first?
+	Ans: Selenium will first apply the Implicit wait while locating the element.
+		 Once Element found the explicitwait(20) starts checking the condtion (elementToBeClickable)
+	
+
+3. click(), submit()?
+Click() purpose is clciking a web element like button , link or any clickable element
+submit() purpose is to submit the form, any element inside a form.
+
+4. if no element found while for findlement()? 
+	findElement throw an exception like nosuch element exception , findElements()--> doesn't thrown instead it return empty list.
+
+5. driver.manage()  --> return type--> Object of type: Options(WebDriver.Options)
+options like : coockies, timeouts, window operations
+
+6. how to get text from textbox?
+	using getAttribute();
+
+7. Diff betwen groupId and artifactId?
+
+	groupId: identfies the organization or project group.
+	         <groupId>org.seleniumhq.selenium</groupId>
+	
+	artifactId: it identfies the specific project under that group.
+				<artifactId>selenium-java</artifactId>
+	
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>4.12.0</version>
+	</dependency>
+
+8. what are hooks and tags?
+	hooks:
+	Special methods that run before or after each scenario in cucumber feature file
+	Written in the @Before and @After annotations
+	
+	
+	@Before
+	public void setUp() {
+	    System.out.println("This runs before each scenario");
+	    // e.g., open browser, initialize WebDriver
+	}
+	
+	@After
+	public void tearDown() {
+	    System.out.println("This runs after each scenario");
+	    // e.g., close browser, clean up
+	}
+
+
+	tags: they dont run any code they just tell the cucumber which scenario to include/exclude
+	@Smoke
+	Scenario: validate login
+	Given:
+	When:
+
+
+9. Maven life cycle?
+
+	maven life cycle is sequence of build phases. the standard phases are
+	validate-->complile-->test-->package-->verify-->install-->deploy
+	(mvn complie, mvn test, mvn install)
+	
+	Interview Answer:
+	Maven is a build automation tool for java project, maven life cycle is a squence of build phases to build a project.
+	The default life cycle includes phases like compile, test, package, install and deploy. When we run a phase maven executes all
+	the phases automativcally
+	There are also clean and site life cycle for cleaning the project and generating the documentation.
+	
+10. some maven commands
+
+	maven command are usd to execute different lifecycle phases. 
+	for example:
+	mvn clean -    deletes the previous build files(like target folder)
+	mvn complile - to complite the code
+	mvn test -     to run tests
+	mvn package -  package the compiled code into jar/war file
+	mvn install -  install the package into your local maven repository
+	mvn deploy -   deploy the package to a remote repository
+	
+11. git rebase origing/main?
+	when we want to move our commits onto a new base commit instead of merging
+	
+12. When you run mvn test, by default maven uses surefire plugin(refer 13 point) to run tests
+					 ┌─────────────┐
+					 │ mvn test │
+					 └─────┬──────┘
+							 │
+							 ▼
+					 ┌─────────────────────┐
+					 │ Maven Surefire Plugin│
+					 │ (Configured in pom.xml) │
+					 └─────────┬───────────┘
+					           │
+					 Reads test classes or
+					 suite XML file (testng.xml)
+							 │
+							 ▼
+					 ┌─────────────────────┐
+					 │ TestNG │
+					 │ (Test Execution) │
+					 └─────────┬───────────┘
+					           │
+					 Identifies classes & methods:
+					 - Classes defined in testng.xml OR          // if testng.xml not configured in pom,surefire plugin has default rules: it will run classes ending with test.java automatically  
+					 matching *Test.java pattern
+					 - Methods annotated with @Test
+							 │
+							 ▼
+					 ┌─────────────────────┐
+					 │ Test Class Methods │
+					 │ Executes @Test code │
+					 └─────────┬───────────┘
+					           │
+					 Generates results:
+					 - Pass / Fail / Skip
+					 - Reports in target/surefire-reports
+					 - Optional: Extent/Allure reports
+							 │
+							 ▼
+					 ┌───────────┐
+					 │ Finished │
+					 └───────────┘
+
+13. maven-sure-fire-plugin setup in pom.xml
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M7</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+14. Maven commands to run tests?
+
+	mvn clean test 									Run all tests--> Pick all classes in testng.xml or default *test.java classes
+	mvn clean test -DsuiteXmlFile=testng.xml		Run test from specific testng xml-->TestNg  runs only classes/methods define in that XML.
+	mvn clean test -Dtest=LoginTest					Run specific test class -->Run all @Testmethods inside that class
+	mvn clean test -Dtest=LoginTest#validateLogin	Run a specific method--> Runs only validateLogin() inside LoginTest.java
+	mvn clean test -Dgroups=smoke					testNg will only run tests marked with groups="smoke"
+	mvn clean test -Dgroups="smoke,regression"		it can run multiple groups
+	mvn clean install -DskipTests					Skip Tests(Build only) 
+-------------------------------------------------
+Cucumber:
+
+1. cucumber tags? how to run different combinations of tags when multiple tags are present?
+Tags in Cucumber are labels (starting with @) that you can add to your feature files to control which tests to run.
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+    features = "src/test/resources/features",
+    glue = "stepDefinitions",
+    tags = "(@smoke or @regression) and not @wip",
+    plugin = {"pretty", "html:target/cucumber-reports"} //plugin is usd to configure what reports we want generate and where to put them
+)
+public class TestRunner {
+}
+
+@smoke or @regression: Run tests that are tagged with either @smoke or @regression.
+not @wip: But skip any test that is tagged with @wip (work in progress).
+
+
+🗣️ In plain words:
+“Run smoke or regression tests, but skip the ones still in progress.”
+
+2. To run all different scenario with different tag lines?
+
+	@CucumberOptions(
+	    features = "src/test/resources/features",  //path to folder containing All .folder files.
+	    glue = "stepDefinitions",
+	    tags = "@Login or @Search or @Checkout or @Profile or @Cart or @Payment or @Order or @Review or @Logout or @Notification",
+	    plugin = {"pretty", "html:target/cucumber-reports"},
+	    monochrome = true
+	)
+
+	or
+	If all your scenarios have a common tag like @SmokeTest, you can use:
+	tags = "@SmokeTest"
+
+	The plugin option in the Cucumber runner is used to generate reports or customize output formats after test execution
+	
+	@CucumberOptions(
+	    plugin = {"pretty", "html:target/cucumber-reports"}
+	)
+	pretty--> is a plugin that makes the console output clean and readable
+	monochrome = true--> removes colored output from the console.
+
+
+
+3. Difference between Data table and Examples?
+	Data Table:
+	-->Used inside a step to pass multiple values.
+	--> Good for structured data like login credentials, list etc
+	
+	Examples:
+	-->Used with Scenario Outline to run the same scenario multiple times with different data.
+	-->Good for data-driven testing.
+
+4. How do u integrate cucumber with Selenium webdriver?
+	In Maven project we need to configured Cucumber+Selenium dependencies in pom.xml file
+
+5. Can u run cucumber tests in parallel? how?
+
+	-->configure the Maven Surefire Plugin like this: in pom.xml
+	 
+	<plugin>
+	  <groupId>org.apache.maven.plugins</groupId>,
+	  <artifactId>maven-surefire-plugin</artifactId>
+	  <version>3.0.0</version>
+	  
+	  <configuration>
+	    <parallel>Methods</parallel> <!-- Runs test classes in parallel -->
+	    <threadCount>4</threadCount> <!-- Number of parallel threads -->
+	  </configuration>
+	</plugin>
+	
+	-->abnd add dependency's
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-testng</artifactId>
+	    <version>7.28.2</version>
+	</dependency>
+	
+	-->create multiple feature files:
+	1.
+	@RunWith(Cucumber.class)
+	@CucumberOptions(
+	    features = "src/test/resources/features/Login.feature",
+	    glue = {"stepDefinitions"}
+	)
+	public class LoginTestRunner {}
+	
+	2.
+	@RunWith(Cucumber.class)
+	@CucumberOptions(
+	    features = "src/test/resources/features/Signup.feature",
+	    glue = {"stepDefinitions"}
+	)
+	public class SignupTestRunner {}
+	
+	
+	--> Multiple runner classes like
+	public class LoginTestRunner {}   // Runs Login.feature
+	public class SignupTestRunner {}  // Runs Signup.feature
+	
+	-->when u run 
+	mvn test
+	
+	Maven will:
+	Detect all test runner classes.
+	Run them in parallel using the number of threads you specified (threadCount).
+	You don’t need to run each class manually.
+
+
+6. What is the role of runner class in cucmber ?
+	In Cucumber, the Runner class plays a crucial role in executing the test scenarios defined in feature files.
+	It acts as a bridge between the feature files and the step definitions.
+
+
+7. How do u overcome with flaky tests?
+	Ans: timing issue: increase wait
+	test data dependencies: same test data used by multiple tests, leading to conflicts
+
+8. how to skip a scenario to execute in cucumber?
+	through command line:
+	mvn test -DCucumber.options="--tags '@Login and not @Skip'"
+	
+	and from runner class
+	tags = "not @UnSucessfulLogin"
+
+9. Three Amigos in BDD:
+	Buisiness
+	Developer
+	Testers
+	
+10 Suppose u have 100 .feature files and want execute only 40 in that how is u r approach?
+	Ans: make all the feature file with same tag name which u want to execute then provide that tagname in runner file
+	
+	
+11. can we use reg expression and cucumber expression together?
+	
+	we can use both in entire definition file but its not possible in single method.
+	
+12. can we run our test without having @cucumberoptions in the runner class?
+	Yes, we can run our test without having @cucumberoptions in the runner class, but it only worksif we follow cucmbers default
+	structure
+	Feature files must be inside->src/test/resources/features.
+	step definition and hooks must be in the same package.
+	
+	if the files are placed in custome folders we need @CucumberOptions
+
+	 @RunWith(Cucumber.class)
+	public class SignupTestRunner {
+	}
+
+13. What is plugin in Cucumber Runner?
+	The plugin option in the Cucumber runner is used to generate reports or customize output formats after test execution
+	
+	@CucumberOptions(
+	    plugin = {"pretty", "html:target/cucumber-reports"}
+	)
+	pretty--> is a plugin that makes the console output clean and readable
+	monochrome = true--> removes colored output from the console.
+	
+	
+	
+	
+	
+	
+	
+	
 	 */
 	
 }

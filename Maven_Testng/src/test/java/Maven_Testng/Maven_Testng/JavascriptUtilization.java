@@ -51,6 +51,9 @@ public static void scrollIntiView(WebElement email, WebDriver driver) {
 	  action.scrollByAmount(4000, 0).perform();			//it will scroll right
 	  action.scrollByAmount(-3500, 0).perform();			//it will scroll left
 	  
+	  js.executeScript("window.resizeTo(980, 450);");
+		
+	  
 }
 }
 //Refresh The page

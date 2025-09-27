@@ -21,12 +21,15 @@ public class ReverseOfSentance {
 		}
 		
 		
-		System.out.println(reverseString);
+		System.out.println("Reverse sentance: "+reverseString);
+		
+		String s2="Automtion";
+		StringBuffer sb = new StringBuffer(s2);
+        System.out.println("Append :"+ sb.reverse());
 
 	}
 
 }
-
 
 //
 

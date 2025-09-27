@@ -26,7 +26,36 @@ public class Duplicate_elements_inarray {
 
 	}
 
+
 }
+/*
+ 		Print duplicate strings
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        String s= "indian indian police veeresh lakkandi police indian";
+       LinkedHashMap<String,Integer> digitMap = new LinkedHashMap<String, Integer>();
+		String c[]=s.split(" ");
+		
+		for(String c1:c){
+ 			
+			if(digitMap.containsKey(c1))
+				digitMap.put(c1, digitMap.get(c1)+1);
+				else 
+					digitMap.put(c1, 1);
+				
+		}
+			System.out.println(s+":"+digitMap);
+		for(Map.Entry<String,Integer> entry : digitMap.entrySet()){
+		    if(entry.getValue()>1){
+		    System.out.println("Key: "+entry.getKey()+" "+"- "+entry.getValue());
+		    }
+		}
+
+	
+    }
+}
+ */
 
 
 //Duplicate character count************

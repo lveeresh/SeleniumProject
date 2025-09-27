@@ -23,7 +23,7 @@ public class GitFlow {
 		Commit your changes
 		Use git commit -m "Your meaningful commit message" to save your changes locally.
 		
-		Push your changes to your feature/local branch
+		Push your changes to your feature branch
 		Use git push origin <your-branch-name> to push your committed changes to the remote repository.
 		
 		Raise a Pull Request (PR)
@@ -86,7 +86,16 @@ public class GitFlow {
 			Delete <<<<<<<, =======, and >>>>>>> after resolving.
 			
 			4. Mark the conflict as resolved
+--------------------------------------------------------------------
 
+git reset:
+
+To get commit id/commit hash---> perform git log
+
+git reset <file>            		Unstage a file before committing.
+git reset --soft <commit>			Undo commits but keep changes staged.
+git reset --mixed <commit>			Undo commits and unstage changes.
+git reset --hard <commit>			Undo commits and discard changes completely.
 		
 */
 	}

@@ -33,11 +33,11 @@ public class FirstNonRepeatingChar {
 
         System.out.println(s + ": " + digitMap);
 
-        boolean found = false; int count=0;
+        int flag = 0; int count=0;
         for (Map.Entry<Character, Integer> entry : digitMap.entrySet()) {	//imp is --> generic should be present here, otherwise it will throw an exception
             if (entry.getValue() == 1) {
                 System.out.println("First non-repeated char: " + entry.getKey());
-                found = true;
+                flag=1;
                 break;
                 
           /*      
@@ -47,7 +47,7 @@ public class FirstNonRepeatingChar {
                 count++;
                 if (count == 2) {
                     System.out.println("Second non-repeated character: " + entry.getKey());
-                    found = true;
+                    flag=1;
                     break;
                 }
             }
@@ -57,7 +57,7 @@ public class FirstNonRepeatingChar {
             }
         }
 
-        if (!found) {
+        if (flag==0) {
             System.out.println("No non-repeated character found.");
         }
     }

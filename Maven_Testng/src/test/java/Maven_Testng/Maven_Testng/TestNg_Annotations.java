@@ -42,7 +42,7 @@ public class TestNg_Annotations {
 		System.out.println("Logintoiapp_test2");
 	}
 
-	@Test(priority = 3,dependsOnMethods="logintoapp", groups = {"search_app"}) // it will group the methods with same group names and give the results
+	@Test(priority = 3,dependsOnMethods={"logintoapp", "launchbrowser"}, groups = {"search_app"}) // it will group the methods with same group names and give the results
 	public void serach_app() {
 		System.out.println("Searchapp_test3");
 	}

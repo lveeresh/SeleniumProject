@@ -41,7 +41,7 @@ public class ReadWrightExcel2 {
 		Sheet sheet = workbook.getSheetAt(0);
 
 		int rowCount = sheet.getPhysicalNumberOfRows();
-		int colCount = sheet.getRow(1).getPhysicalNumberOfCells();   // Get column count
+		int colCount = sheet.getRow(0).getPhysicalNumberOfCells();   // Get column count
 		
 		Object[][] data = new Object[rowCount - 1][2]; // skip header
 

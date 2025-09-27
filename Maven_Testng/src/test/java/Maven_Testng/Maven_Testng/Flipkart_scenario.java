@@ -69,7 +69,7 @@ public class Flipkart_scenario {
 			if(device.equalsIgnoreCase("Data Cards")) {
 				
 				js.executeScript("arguments[0].style.border='3px solid red'", el);
-				Thread.sleep(5000);
+				WaitUtils.waitFrClickable(driver, By.name("veeresh"), 10);
 				el.click();
 				break;
 			}
