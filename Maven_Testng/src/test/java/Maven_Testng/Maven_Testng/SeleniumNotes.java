@@ -22,6 +22,7 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 		 1. Explicite Wait
 			 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			 wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("elementId_123")));
+	--> ExpectedConditions:it is a helper class that provides predefined method/conditions like visible, clcikble, text present etc
 	
 		 2. Page Load TimeOut
 	 
@@ -73,7 +74,7 @@ We follow the Agile methodology, with sprints typically lasting 2 to 3 weeks, an
 			    }
 			}
 			
-		3. Logging Test Completion
+		3. Logging Test Completion/ To log the test results regardless of success or failure
 			To log that a test has finished, regardless of success or failure:
 			
 			try {
@@ -599,7 +600,7 @@ options like : coockies, timeouts, window operations
             </configuration>
         </plugin>
     </plugins>
-</build>
+	</build>
 
 
 14. Maven commands to run tests?
@@ -611,6 +612,16 @@ options like : coockies, timeouts, window operations
 	mvn clean test -Dgroups=smoke					testNg will only run tests marked with groups="smoke"
 	mvn clean test -Dgroups="smoke,regression"		it can run multiple groups
 	mvn clean install -DskipTests					Skip Tests(Build only) 
+	
+15. what improvement you have made in u r automation framework ?
+	perform regular code optimization to improve test execution time.
+	Prefer ID, name, or CSS selectors over complex XPath.
+	Avoid Thread.sleep()—it slows down tests unnecessarily.
+	Uses Explicit Waits (WebDriverWait) or FluentWait to wait only as long as needed for elements to appear.
+	
+16. Subaru : Automobile Manufacturing Division
+	Snet(SubaruNet): Subaru Net is a website/online portal that helps Subaru talk to its car dealers in the U.S.
+	It makes work easier by sharing important info about selling cars, helping customers, training, and fixing cars.
 -------------------------------------------------
 Cucumber:
 

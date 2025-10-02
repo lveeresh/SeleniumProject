@@ -58,6 +58,11 @@ public static void scrollIntiView(WebElement email, WebDriver driver) {
 }
 //Refresh The page
 
+/*
+ 	WebElement element = driver.findElement(By.tagName("body"));
+	element.sendKeys(Keys.F5); // Refreshes the page
+ */
+
 //  js.executeScript("history.go(0)");
 
 

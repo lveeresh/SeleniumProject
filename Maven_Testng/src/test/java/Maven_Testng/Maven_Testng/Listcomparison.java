@@ -22,6 +22,7 @@ public class Listcomparison {
 		
 		List<String> actualNames = Arrays.asList("p3","p2","p1");
 		Collections.sort(actualNames);
+		Collections.sort(listNames);
 //		List<WebElement> actualNames = driver.findElements(By.xpath("//div[@id='product']"));
 //		List<String> list = new ArrayList<>();
 //		
@@ -35,6 +36,7 @@ public class Listcomparison {
 //		else {
 //			System.out.println("Pass List are not equal");
 //		}
+		
 		
 		if (listNames.equals(actualNames)) {
             System.out.println("list are equal");

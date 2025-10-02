@@ -31,6 +31,9 @@ public class ShadowDomExample {
 			   </div>
 		  </div>
 	    </div>
+	    
+	    
+---> Use: Encapsulate part of a webpage, so its HTML and CSS don’t interfere with the rest of the page.
 */
 	@Test
 	public void shadowRoot() throws InterruptedException {
@@ -48,7 +51,7 @@ public class ShadowDomExample {
 
 		// Step 1: Locate the shadow host
         WebElement shadowHost = driver.findElement(By.cssSelector("div#open-shadow")); //u can use xpath also to locate element
-        	//ebElement shadowHost = driver.findElement(By.xpath("//div[@id='open-shadow']"));
+        	//WebElement shadowHost = driver.findElement(By.xpath("//div[@id='open-shadow']"));
         
         // Step 2: Access the shadow root
         SearchContext shadowRoot = shadowHost.getShadowRoot();

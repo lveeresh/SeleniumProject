@@ -44,6 +44,26 @@ public class PrimeNumbers {
 	}
 }
 
+
+/*
+ class Main {
+    public static void main(String[] args) {
+        int n = 11;
+        for (int i = 2; i <= n; i++) {
+            if (n % i == 0) {
+                if (n == i) {
+                    System.out.println("prime"); // n is prime
+                } else {
+                    System.out.println("not"); // n is not prime
+                    break;
+                }
+            }
+        }
+    }
+}
+
+ */
+
 //Reverse of number
 
 class Reverse {

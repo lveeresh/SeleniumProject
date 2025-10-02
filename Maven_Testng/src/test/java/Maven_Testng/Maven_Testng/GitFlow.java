@@ -39,7 +39,7 @@ public class GitFlow {
 
 		2. git pull origin staging/main   --> here u trying to make the code upto the date in local also, before pushing ur's
 		
-		3. git stash pop    -->this command retrieve the code/logic which u r saved earlier in the 1st point
+		3. git stash pop/apply    -->this command retrieve the code/logic which u r saved earlier in the 1st point
 		
 		4. then add your changes into staging area
 		

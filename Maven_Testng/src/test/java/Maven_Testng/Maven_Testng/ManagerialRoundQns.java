@@ -2,7 +2,6 @@ package Maven_Testng.Maven_Testng;
 
 public class ManagerialRoundQns {
 	/*
-	 
 	1. Why do you want to work for this company?
 	Ans: I want to work work for this company becouse  it has a good reputation and matches my skills. I believ i can
 		contribute well and also grow in my career here.
@@ -20,11 +19,11 @@ public class ManagerialRoundQns {
 	I focus on delivering quality work, supporting my teammates, and continuously learning to contribute to the team’s success.
 	
 	5. Reason behind leaving your job? or why you are looking for a change?
-	Ans: in order to enhance my skills set, i am looking for a better oportunity.
+	Ans: in order to enhance my skills set, i am looking for a better opportunity.
 	
 	6. How interested are you in learning new technology?
 	Ans; I’m very interested in learning new technologies. I enjoy exploring tools that improve productivity and help me grow in my role. 
-	I believe continuous learning is key in IT.
+		I believe continuous learning is key in IT.
 	 
 	7. What are some best practices you learned, and how much difference did they make in your testing career?.
 	Ans: One best practice I learned is writing clear and reusable test cases. Earlier, I used to write test cases quickly without
@@ -33,7 +32,7 @@ public class ManagerialRoundQns {
 	 It saved time during regression and improved test coverage. This shift made me more efficient and confident in my testing.
 	 
 	8. strenghts and weakness?
-	Ans: strenght: I’m a quick learner and good at collaborating with teams. I stay calm under pressure and focus on delivering quality work.
+	Ans: strength: I’m a quick learner and good at collaborating with teams. I stay calm under pressure and focus on delivering quality work.
 		weakness: Sometimes I take extra time to double-check my work, but I’m learning to balance speed with accuracy.
 	
 	9. How do you handle pressure or tight deadlines?
@@ -53,8 +52,8 @@ public class ManagerialRoundQns {
 	Ans: I’m motivated by solving problems, learning continuously, and contributing to a team’s success. 
 	Seeing the impact of my work keeps me inspired and focused.
 	 
-	 
-	 
+	
+	
 	 
 	 
 	 

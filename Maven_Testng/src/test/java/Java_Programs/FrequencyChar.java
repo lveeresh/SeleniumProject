@@ -234,7 +234,7 @@ public class FrequencyOfElementsInArray {
 ----------------------------------------------
 using integer array
 
-class PrintDuplicteChars {
+class PrintDuplicteInteger {
   public static void main(String[] args) {
         System.out.println("Try programiz.pro");
        

@@ -93,6 +93,9 @@ public class Mousde_hower_Actions {
 		act.sendKeys(Keys.ARROW_LEFT).perform();
 		act.sendKeys(Keys.ARROW_RIGHT).perform();
 		
+		act.contextClick().perform(); //to right click
+		act.doubleClick().perform();
+		
 		
 		//Dragging a horizantal slider:
 		WebElement slider = driver.findElement(By.id("slider"));

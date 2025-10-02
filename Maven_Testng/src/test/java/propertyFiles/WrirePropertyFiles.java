@@ -15,7 +15,7 @@ public class WrirePropertyFiles {
 		properties.setProperty("Role", "Test Engneer");
 		properties.setProperty("Technology", "Testing");
 
-// not required		String filePath = System.getProperty("user.dir")+"\\Property_Data\\example.properties";
+		// not required		String filePath = System.getProperty("user.dir")+"\\Property_Data\\example.properties";
 		FileOutputStream file = new FileOutputStream(
 				new File("C:\\Users\\VLAKKAND\\git\\SeleniumProject\\Maven_Testng\\Property_Data\\example2.properties"));
 

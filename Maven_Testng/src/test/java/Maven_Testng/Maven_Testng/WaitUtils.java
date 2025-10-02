@@ -20,9 +20,9 @@ public class WaitUtils {
 	WebDriver driver;
 	static WebDriverWait wait;
 	
-	public static WebElement waitForElement(WebDriver driver, By locator, int timeOutSec) {
+	public static WebElement waitForElement(WebDriver driver, String locator, int timeOutSec) {
 		 wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutSec));
-	WebElement el= 	wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	WebElement el= 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 		return el;
 	}
 	
@@ -30,6 +30,11 @@ public class WaitUtils {
 		 wait = new WebDriverWait(driver, Duration.ofSeconds(timeOutSec));
 	WebElement el= 	wait.until(ExpectedConditions.elementToBeClickable(locator));
 		return el;
+	}
+
+	public static void waitForElement1(WebDriver driver2, String locator, int timeOutSec) {
+		 wait = new WebDriverWait(driver2, Duration.ofSeconds(timeOutSec));
+		WebElement el= 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
 	}
 
 }

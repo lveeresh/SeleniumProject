@@ -8,11 +8,14 @@ import java.util.Collection;
 import java.util.Properties;
 import java.util.Set;
 
+import Maven_Testng.Maven_Testng.Alerts_Handling_And_ColourValidation;
+
 public class ReadProperty {
 
 	public static void main(String[] args) throws IOException {
 
 		Properties properties = new Properties();
+		
 
 		FileInputStream file = new FileInputStream(
 				new File("C:\\Users\\VLAKKAND\\git\\SeleniumProject\\Maven_Testng\\Property_Data\\example.properties"));

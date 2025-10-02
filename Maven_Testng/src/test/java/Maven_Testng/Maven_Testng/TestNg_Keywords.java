@@ -63,6 +63,22 @@ public class TestNg_Keywords {
 		   
 		  
 	  }
+	  
+	  
+
+	      @Test
+	      public void testA() {
+	          System.out.println("Running testA...");
+	          Assert.fail("Simulating failure in testA");
+	      }
+
+	      @Test(dependsOnMethods = {"testA"}, alwaysRun = true)
+	      public void testB() {
+	          System.out.println("Running testB despite testA failure due to alwaysRun = true");
+	          Assert.assertTrue(true);
+	      }
+
+	  
   
   
 }

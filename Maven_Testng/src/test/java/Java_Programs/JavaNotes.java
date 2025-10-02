@@ -142,7 +142,7 @@ public class JavaNotes {
 	only one thread can access the object/method at a time
 	
 	No-Synchronisation: means not thread safe
-	multiple threads can access the object simoultaneously
+	multiple threads can access the object simultaneously
 	
 15. Garbage collector?
 	Garbage collector in java is a process of removes object from memory that are no longer needed.
@@ -178,6 +178,10 @@ public class JavaNotes {
 	Thrown when a method receives an argument that is inappropriate.
 	Example:
 	Thread.sleep(-100); // IllegalArgumentException
+	
+	5. NullpointerException
+	String s=null;
+	sop(s.length());
 
 
  

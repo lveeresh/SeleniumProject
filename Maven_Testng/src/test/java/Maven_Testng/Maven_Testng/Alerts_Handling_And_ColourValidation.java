@@ -2,6 +2,7 @@ package Maven_Testng.Maven_Testng;
 
 import javax.xml.xpath.XPath;
 
+import org.bouncycastle.util.Properties;
 //import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -12,9 +13,11 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.Assert;
+import propertyFiles.ReadProperty;
 
-public class Alerts_Handling_And_ColourValidation {
+public class Alerts_Handling_And_ColourValidation extends ReadProperty {
 	WebDriver driver;
+	
   @Test
   public void setUp() throws InterruptedException {
 //	  System.setProperty("webdriver.chrome.driver",
@@ -48,7 +51,10 @@ public class Alerts_Handling_And_ColourValidation {
 		System.out.println("cloure "+expectedColour);
 		Assert.assertEquals(actualColour, expectedColour);
 		
-		WaitUtils.waitForElement(driver, By.id("name"), 20); // POM
+		
+		
+		String xpath = "//div[@id='submit']";
+		WaitUtils.waitForElement(driver, xpath, 20); // POM
 		
 		alertsHandling();
   }

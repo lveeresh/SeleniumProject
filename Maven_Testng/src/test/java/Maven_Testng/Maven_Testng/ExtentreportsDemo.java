@@ -22,7 +22,7 @@ public class ExtentreportsDemo  {
 		
 		WebDriver driver=null;
 		
-		ExtentSparkReporter htmlReporter = new ExtentSparkReporter("extentReports.html");
+		ExtentSparkReporter htmlReporter = new ExtentSparkReporter("target/extentReports.html");
 		ExtentReports extent = new ExtentReports(); 
 		extent.attachReporter(htmlReporter);
 		ExtentTest test1 = extent.createTest("Perform Drag And Drop Action","This is test to validate dragAndDrops Functionality");
