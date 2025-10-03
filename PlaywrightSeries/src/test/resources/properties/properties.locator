@@ -1,0 +1,6 @@
+#Login Locators
+
+
+userID=//*[id='detail']
+password=#fire
+
